@@ -4,7 +4,9 @@ MAINTAINER Christian Gatzlaff <cgatzlaff@gmail.com>
 # basic flask environment
 RUN apk add --no-cache bash git nginx uwsgi uwsgi-python3 \
 	&& pip3 install --upgrade pip \
-	&& pip3 install flask
+	&& pip3 install flask flask_sqlalchemy==2.1.0 \
+        flask-restful==0.3.6 flask-cors==3.0.7 \
+        flask-cache==0.13.1 flask-marshmallow==0.9.0
 
 # application folder
 ENV APP_DIR /app
